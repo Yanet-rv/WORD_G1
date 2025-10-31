@@ -1,21 +1,42 @@
 ---
-title: "MAIZ"
-author: "G1"
-format: html
-editor: visual
+title: "EFECTO DE LA FERTILIZACIÓN CON GALLINAZA Y DENSIDAD DE SIEMBRA EN EL CULTIVO DE QUINUA (Chenopodium quinoa) VARIEDAD SALCEDO"
+author: "Tomado de: Bach. Miguel Angel Zagaceta Llanca"
+format:
+  html:
+    toc: true
+    toc-expand: true
+    toc-depth: 4
+    toc-location: left
+    number-sections: true
+    self-contained: true
+    code-fold: true
+    output-file: "ESM"
+editor_options: 
+  chunk_output_type: console
+execute:
+  warning: false
+  message: false
+  echo: true
 ---
 
-# INTRODUCCIÓN
+# **Integrantes G1**
+
+1.  Colunche Vasquez Josue Jhonatan
+2.  Huaman Rimarachin Milver
+3.  Maicelo Villanueva Luis Miguel
+4.  Rivera Jimenez Yanet
+5.  Vasquez Barboza Erik Percy
+6.  Villa Tochon Jorge Luis
+
+# **Introducción**
 
 El maíz morado es un cultivo de relevancia económica y nutricional en el Perú. Sin embargo, su rendimiento depende de factores agronómicos como la densidad de siembra y el manejo de la fertilización orgánica.En este contexto, la porcinaza constituye una alternativa sostenible que puede mejorar la productividad y la salud del suelo (Nolasco-Bernardo,2022). A través de herramientas estadísticas y gráficas en R Studio, se busca reproducir el análisis de varianza (ANOVA), la comparación de medias y la visualización de los resultados, verificando la consistencia con los hallazgos reportados en la investigación original. El presente trabajo tomado de Zagaceta Llanca (2023) el cual tuvo como finalidad analizar estadísticamente los datos experimentales provenientes del estudio “Niveles de porcinaza y densidades de siembra sobre el rendimiento de maíz morado (Zea mays L.) var. INIA-601 en Lámud”, en base a ello se tomo tomo tres variables a evaluar buscando contrastar los resultados originales de la tesis con los obtenidos mediante el procesamiento en R Studio.
 
-# OBJETIVOS
-
-## General
+# **Objetivo**
 
 Analizar y comparar las variables de rendimiento granos por hectarea, altura de planta a los 30 y 180 días y el numero de mazorcas por planta con los resultados obtenidos de la tesis tomada, con los generados mediante el procesamiento estadístico en R Studio, evaluando los efectos de los niveles de porcinaza y las densidades de siembra sobre el rendimiento del maíz morado.
 
-# Estructura para el desarrollo del trabajo
+# **Estructura para el desarrollo del trabajo**
 
 1.Organizar los datos experimentales en una base de datos estructurada en formato CSV o Google Sheets.
 
@@ -29,20 +50,20 @@ Analizar y comparar las variables de rendimiento granos por hectarea, altura de 
 
 6.Contrastar los resultados obtenidos con los reportados en la tesis original.
 
-# DESARROLLO
+# **Desarrollo**
 
-## Recolección y organización de datos
+## **Recolección y organización de datos**
 
 Los datos experimentales fueron recolectados del anexo de la tesis y organizados en una hoja de calculo google sheet el cual contiene los factores y variables evaluadas:
 
-### Factores
+### **Factores**
 
 -   Nivel de porcinaza (0, 160, 320 y 480 g/planta)
 -   Densidad de siembra (0.8×0.4 m y 0.8×0.5 m).
 
-### Bloques: 4 repeticiones.
+### **Bloques: 4 repeticiones.**
 
-### Variables
+### **Variables**
 
 -   Altura de planta
 -   Número de mazorcas por planta
@@ -51,13 +72,13 @@ Los datos experimentales fueron recolectados del anexo de la tesis y organizados
 -   Número de mazorcas por hectárea
 -   Rendimiento de grano por hectárea.
 
-### Variables tomadas para la evaluación
+### **Variables tomadas para la evaluación**
 
 -   Rendimiento granos por hectarea
 -   Altura de planta a los 30 y 180 días
 -   Numero de mazorcas por planta
 
-## Librerías
+## **Librerías**
 
 ```{r}
 library(tidyverse)
@@ -71,7 +92,7 @@ library(cowplot)
 library(GGally)
 ```
 
-# IMPORTAR BASE DE DATOS
+# **Importar datos**
 
 ```{r}
 url <- "https://docs.google.com/spreadsheets/d/1o4mtAkI1lBgoUzqDT-e7cIhIwh_K5m6CoxAx0ETvwXU/edit?gid=1753270824#gid=1753270824"
@@ -86,11 +107,11 @@ fb <- gs %>%
 str(fb)
 ```
 
-# VARIABLES EVALUADAS
+# **Variables evaluadas**
 
-## VARIABLE 1 Rendimiento de granos por hectarea
+## **Variable 1 Rendimiento de granos por hectarea**
 
-### Modelo estadisticos rendimiento de granos por hectarea
+### **Modelo estadisticos rendimiento de granos por hectarea**
 
 $$ Rend_g_ha = \mu + bloque + porcinaza + densidad + porcinaza*densidad + e$$ \### Análisis de varianza Anova rendimiento de granos por hectarea
 
@@ -102,7 +123,7 @@ print(anova_rend)
 
 El análisis mostró que los factores porcinaza y densidad tuvieron un efecto altamente significativo sobre el rendimiento del cultivo (p \< 0.001). Asimismo, la interacción porcinaza × densidad fue significativa, indicando que la respuesta del rendimiento a la porcinaza depende del nivel de densidad empleado. En cambio, el factor bloque no presentó diferencias significativas
 
-### Comparación de medias rendimiento de granos por hectarea
+### **Comparación de medias rendimiento de granos por hectarea**
 
 ```{r}
 tukey <- emmeans(modelo_rend, ~ porcinaza*densidad) %>% 
@@ -111,7 +132,7 @@ tukey <- emmeans(modelo_rend, ~ porcinaza*densidad) %>%
 print(tukey)
 ```
 
-### Gráficos de rendimiento de granos por hectarea
+### **Gráficos de rendimiento de granos por hectarea**
 
 ```{r}
 emmeans_rend <- emmeans(modelo_rend, ~ porcinaza | densidad)
@@ -131,13 +152,13 @@ ggplot(cld_rend, aes(x = porcinaza, y = emmean, fill = densidad)) +
 
 Gráfico 01: El gráfico evidencia que el rendimiento de grano aumentó conforme se incrementó el nivel de porcinaza aplicado, tanto en la densidad de 0.8 × 0.4 m como en 0.8 × 0.5 m. Las letras sobre las barras muestran diferencias estadísticas entre los tratamientos.
 
-##VARIABLE 2 1 Altura de planta a los 30 días
+## **Variable 2.1 Altura de planta a los 30 días**
 
-### Modelo estadisticos altura de planta a los 30 días
+### **Modelo estadisticos altura de planta a los 30 días**
 
 $$ Altup30d = \mu + bloque + porcinaza + densidad + porcinaza*densidad + e$$
 
-### Análisis de varianza Anova altura de planta a los 30 días
+### **Análisis de varianza Anova altura de planta a los 30 días**
 
 ```{r}
 md_altu30d <- lmer(altu30d ~ densidad * porcinaza + (1 | bloque), data = fb)
@@ -147,7 +168,7 @@ Anova(md_altu30d)
 
 Ningún factor ni combinación de factores tuvo un efecto notable sobre la altura a los 30 días en tu experimento.
 
-### Comparación de medias porcinaza y rendimiento a los 30 días
+### **Comparación de medias porcinaza y rendimiento a los 30 días**
 
 ```{r}
 tukey <- emmeans(md_altu30d, ~ porcinaza*densidad) %>% 
@@ -156,7 +177,7 @@ tukey <- emmeans(md_altu30d, ~ porcinaza*densidad) %>%
 print(tukey)
 ```
 
-### Gráficos altura de planta los 30 días
+### **Gráficos altura de planta los 30 días**
 
 ```{r}
 emmeans_altu30d <- emmeans(md_altu30d, ~ porcinaza | densidad)
@@ -176,11 +197,11 @@ ggplot(cld_altu30d, aes(x = porcinaza, y = emmean, fill = densidad)) +
 
 Gráfico 02 : Ningún factor ni combinación de factores tuvo un efecto notable sobre la altura a los 30 días en tu experimento.
 
-##VARIABLE 2 2 Altura de planta a los 180 días (alt180d)
+## **Variable 2.2 Altura de planta a los 180 días (alt180d)**
 
-### Modelo estadisticos
+### **Modelo estadisticos**
 
-$$ Altup180d = \mu + bloque + porcinaza + densidad + porcinaza*densidad + e$$ \### Análisis de varianza Anova altura de planta a los 180 días
+$$ Altup180d = \mu + bloque + porcinaza + densidad + porcinaza*densidad + e$$ \### **Análisis de varianza Anova altura de planta a los 180 días**
 
 ```{r}
 md_alt180d <- lmer(alt180d ~ densidad * porcinaza + (1 | bloque), data = fb)
@@ -190,7 +211,7 @@ Anova(md_alt180d)
 
 La altura de planta a los 180 días estuvo determinada principalmente por el nivel de porcinaza aplicada, mientras que la densidad de siembra y la interacción entre factores no afectaron significativamente esta variable.
 
-### Comparación de medias de altura de planta los 180 días
+### **Comparación de medias de altura de planta los 180 días**
 
 ```{r}
 tukey <- emmeans(md_alt180d, ~ porcinaza*densidad) %>% 
@@ -199,7 +220,7 @@ tukey <- emmeans(md_alt180d, ~ porcinaza*densidad) %>%
 print(tukey)
 ```
 
-### Gráficos altura de planta los 180 días
+### **Gráficos altura de planta los 180 días**
 
 ```{r}
 emmeans_alt180d <- emmeans(md_alt180d, ~ porcinaza | densidad)
@@ -219,13 +240,13 @@ ggplot(cld_alt180d, aes(x = porcinaza, y = emmean, fill = densidad)) +
 
 Gráfico 03 : La altura de las plantas a los 180 días aumentó con los niveles de porcinaza, alcanzando los mayores valores con 480 g/planta. La densidad 0.8 × 0.5 m mostró una ligera ventaja en crecimiento. Solo el tratamiento con 480 g/planta y densidad 0.8 × 0.5 m presentó diferencias significativas respecto al control
 
-## VARIABLE 3 número de mazorcas por planta
+## **Variable 3 número de mazorcas por planta**
 
-### Modelo estadisticos número de mazorcas por planta
+### **Modelo estadisticos número de mazorcas por planta**
 
 $$ Mazp = \mu + bloque + porcinaza + densidad + porcinaza*densidad + e$$
 
-### Análisis de varianza Anova número de mazorcas por planta
+### **Análisis de varianza Anova número de mazorcas por planta**
 
 ```{r}
 modelo_maz_p <- lmer(maz_p ~ densidad * porcinaza + (1 | bloque), data = fb)
@@ -235,7 +256,7 @@ Anova(modelo_maz_p)
 
 Tanto la densidad de siembra como los niveles de porcinaza tuvieron un efecto altamente significativo en el número de mazorcas por planta. Además, la interacción significativa entre ambos factores indica que las combinaciones específicas de densidad y fertilización orgánica influyen de manera conjunta en la producción de mazorcas.
 
-### Comparación de medias mazorcas por planta
+### **Comparación de medias mazorcas por planta**
 
 ```{r}
 tukey <- emmeans(modelo_maz_p, ~ porcinaza*densidad) %>% 
@@ -244,7 +265,7 @@ tukey <- emmeans(modelo_maz_p, ~ porcinaza*densidad) %>%
 print(tukey)
 ```
 
-### Gráfico de número de mazorcas por planta
+### **Gráfico de número de mazorcas por planta**
 
 ```{r}
 emmeans_var3 <- emmeans(modelo_maz_p, ~ porcinaza | densidad)
@@ -264,7 +285,7 @@ ggplot(cld_var3, aes(x = porcinaza, y = emmean, fill = densidad)) +
 
 Gráfico 04: El número de mazorcas por planta aumenta con la aplicación de porcinaza, especialmente en la densidad más amplia (0.8×0.5 m). La combinación de 480 kg de porcinaza y menor densidad de siembra es la más favorable para maximizar la producción de mazorcas por planta.
 
-# ANÁLISIS MULTIVARIADO PCA
+# **Analisis multivariado PCA **
 
 ```{r}
 PCA(fb[, 5:13], quali.sup = 1:4, graph = T)
@@ -292,7 +313,7 @@ list(var, ind) %>%
 
 Gráficos 05 : PCA mostró una alta asociación entre las variables de rendimiento (maz_p, maz_ha, diam_m, peso_g y long_m). Los tratamientos con 480 g/planta, especialmente con densidad 0.8×0.5 m, se ubicaron en la zona de mayor productividad, mientras que los sin porcinaza presentaron menor desempeño.
 
-## Gráfico de correlación
+## **Gráfico de correlación**
 
 ```{r}
 library(GGally)
@@ -305,15 +326,10 @@ ggcorr(dtmv %>% dplyr::select(where(is.numeric)))
 
 Gráfico 06 : El gráfico muestra la relación entre las variables agronómicas del experimento. Se observa una fuerte correlación positiva (en tonos rojos) entre el rendimiento (rend_g_ha) y variables como mazorcas por hectárea (maz_ha), peso, diámetro y longitud de mazorca, indicando que estos componentes determinan directamente la productividad.
 
-# REFERENCIA BIBLIOGRÁFICA
+# **Referencias bibliográficas**
 
-Olasco-Bernardo, Y., Gutiérrez-Solórzano, M. B., Palacín-Guerra, P. S., & Cornejo-Maldonado, A. S. (2022). Enmiendas orgánicas y su efecto en los componentes de rendimiento de maíz morado (Zea mays L.) en Huánuco, Perú. Revista Investigación Agraria, 4 (1), 38-45. https://doi.org/10.47840/ReInA.4.1.1314
+Olasco-Bernardo, Y., Gutiérrez-Solórzano, M. B., Palacín-Guerra, P. S., & Cornejo-Maldonado, A. S. (2022). Enmiendas orgánicas y su efecto en los componentes de rendimiento de maíz morado (Zea mays L.) en Huánuco, Perú. Revista Investigación Agraria, 4 (1), 38-45. <https://revistas.unheval.edu.pe/index.php/reina/index>
 
-Zagaceta Llanca (2023). Niveles de porcinaza y densidades de siembra sobre el rendimiento de maíz morado (Zea mays L.) var. INIA-601 en Lámud.
+Zagaceta Llanca (2023). Niveles de porcinaza y densidades de siembra sobre el rendimiento de maíz morado (Zea mays L.) var. INIA-601 en Lámud. <https://repositorio.untrm.edu.pe/bitstream/handle/20.500.14077/4239/Miguel%20Angel%20Zagaceta%20Llanca%20-%20FICA.pdf?sequence=1&isAllowed=y>
 
-
-
-
-
-
-`
+\`
