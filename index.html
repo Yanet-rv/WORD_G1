@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="G1">
 
-<title>MAIZ</title>
+<title>index</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,44 +106,33 @@ window.Quarto = {
 
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">MAIZ</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>G1 </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
+<hr>
+<p>title: “EFECTO DE LA FERTILIZACIÓN CON GALLINAZA Y DENSIDAD DE SIEMBRA EN EL CULTIVO DE QUINUA (Chenopodium quinoa) VARIEDAD SALCEDO” author: “Tomado de: Bach. Miguel Angel Zagaceta Llanca” format: html: toc: true toc-expand: true toc-depth: 4 toc-location: left number-sections: true self-contained: true code-fold: true output-file: “ESM” editor_options: chunk_output_type: console execute: warning: false message: false echo: true</p>
+<hr>
+<section id="integrantes-g1" class="level1">
+<h1><strong>Integrantes G1</strong></h1>
+<ol type="1">
+<li>Colunche Vasquez Josue Jhonatan</li>
+<li>Huaman Rimarachin Milver</li>
+<li>Maicelo Villanueva Luis Miguel</li>
+<li>Rivera Jimenez Yanet</li>
+<li>Vasquez Barboza Erik Percy</li>
+<li>Villa Tochon&nbsp;Jorge&nbsp;Luis</li>
+</ol>
+</section>
 <section id="introducción" class="level1">
-<h1>INTRODUCCIÓN</h1>
+<h1><strong>Introducción</strong></h1>
 <p>El maíz morado es un cultivo de relevancia económica y nutricional en el Perú. Sin embargo, su rendimiento depende de factores agronómicos como la densidad de siembra y el manejo de la fertilización orgánica.En este contexto, la porcinaza constituye una alternativa sostenible que puede mejorar la productividad y la salud del suelo (Nolasco-Bernardo,2022). A través de herramientas estadísticas y gráficas en R Studio, se busca reproducir el análisis de varianza (ANOVA), la comparación de medias y la visualización de los resultados, verificando la consistencia con los hallazgos reportados en la investigación original. El presente trabajo tomado de Zagaceta Llanca (2023) el cual tuvo como finalidad analizar estadísticamente los datos experimentales provenientes del estudio “Niveles de porcinaza y densidades de siembra sobre el rendimiento de maíz morado (Zea mays L.) var. INIA-601 en Lámud”, en base a ello se tomo tomo tres variables a evaluar buscando contrastar los resultados originales de la tesis con los obtenidos mediante el procesamiento en R Studio.</p>
 </section>
-<section id="objetivos" class="level1">
-<h1>OBJETIVOS</h1>
-<section id="general" class="level2">
-<h2 class="anchored" data-anchor-id="general">General</h2>
+<section id="objetivo" class="level1">
+<h1><strong>Objetivo</strong></h1>
 <p>Analizar y comparar las variables de rendimiento granos por hectarea, altura de planta a los 30 y 180 días y el numero de mazorcas por planta con los resultados obtenidos de la tesis tomada, con los generados mediante el procesamiento estadístico en R Studio, evaluando los efectos de los niveles de porcinaza y las densidades de siembra sobre el rendimiento del maíz morado.</p>
 </section>
-</section>
 <section id="estructura-para-el-desarrollo-del-trabajo" class="level1">
-<h1>Estructura para el desarrollo del trabajo</h1>
+<h1><strong>Estructura para el desarrollo del trabajo</strong></h1>
 <p>1.Organizar los datos experimentales en una base de datos estructurada en formato CSV o Google Sheets.</p>
 <p>2.Importar y verificar correctamente los factores experimentales en R Studio (porcinaza, densidad y bloque).</p>
 <p>3.Realizar el análisis de varianza (ANOVA) para cada variable evaluada.</p>
@@ -153,22 +141,22 @@ window.Quarto = {
 <p>6.Contrastar los resultados obtenidos con los reportados en la tesis original.</p>
 </section>
 <section id="desarrollo" class="level1">
-<h1>DESARROLLO</h1>
+<h1><strong>Desarrollo</strong></h1>
 <section id="recolección-y-organización-de-datos" class="level2">
-<h2 class="anchored" data-anchor-id="recolección-y-organización-de-datos">Recolección y organización de datos</h2>
+<h2 class="anchored" data-anchor-id="recolección-y-organización-de-datos"><strong>Recolección y organización de datos</strong></h2>
 <p>Los datos experimentales fueron recolectados del anexo de la tesis y organizados en una hoja de calculo google sheet el cual contiene los factores y variables evaluadas:</p>
 <section id="factores" class="level3">
-<h3 class="anchored" data-anchor-id="factores">Factores</h3>
+<h3 class="anchored" data-anchor-id="factores"><strong>Factores</strong></h3>
 <ul>
 <li>Nivel de porcinaza (0, 160, 320 y 480 g/planta)</li>
 <li>Densidad de siembra (0.8×0.4 m y 0.8×0.5 m).</li>
 </ul>
 </section>
 <section id="bloques-4-repeticiones." class="level3">
-<h3 class="anchored" data-anchor-id="bloques-4-repeticiones.">Bloques: 4 repeticiones.</h3>
+<h3 class="anchored" data-anchor-id="bloques-4-repeticiones."><strong>Bloques: 4 repeticiones.</strong></h3>
 </section>
 <section id="variables" class="level3">
-<h3 class="anchored" data-anchor-id="variables">Variables</h3>
+<h3 class="anchored" data-anchor-id="variables"><strong>Variables</strong></h3>
 <ul>
 <li>Altura de planta</li>
 <li>Número de mazorcas por planta</li>
@@ -179,7 +167,7 @@ window.Quarto = {
 </ul>
 </section>
 <section id="variables-tomadas-para-la-evaluación" class="level3">
-<h3 class="anchored" data-anchor-id="variables-tomadas-para-la-evaluación">Variables tomadas para la evaluación</h3>
+<h3 class="anchored" data-anchor-id="variables-tomadas-para-la-evaluación"><strong>Variables tomadas para la evaluación</strong></h3>
 <ul>
 <li>Rendimiento granos por hectarea</li>
 <li>Altura de planta a los 30 y 180 días</li>
@@ -188,7 +176,7 @@ window.Quarto = {
 </section>
 </section>
 <section id="librerías" class="level2">
-<h2 class="anchored" data-anchor-id="librerías">Librerías</h2>
+<h2 class="anchored" data-anchor-id="librerías"><strong>Librerías</strong></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -276,8 +264,8 @@ The following object is masked from 'package:emmeans':
 </div>
 </section>
 </section>
-<section id="importar-base-de-datos" class="level1">
-<h1>IMPORTAR BASE DE DATOS</h1>
+<section id="importar-datos" class="level1">
+<h1><strong>Importar datos</strong></h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://docs.google.com/spreadsheets/d/1o4mtAkI1lBgoUzqDT-e7cIhIwh_K5m6CoxAx0ETvwXU/edit?gid=1753270824#gid=1753270824"</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -330,11 +318,11 @@ The following object is masked from 'package:emmeans':
 </div>
 </section>
 <section id="variables-evaluadas" class="level1">
-<h1>VARIABLES EVALUADAS</h1>
+<h1><strong>Variables evaluadas</strong></h1>
 <section id="variable-1-rendimiento-de-granos-por-hectarea" class="level2">
-<h2 class="anchored" data-anchor-id="variable-1-rendimiento-de-granos-por-hectarea">VARIABLE 1 Rendimiento de granos por hectarea</h2>
+<h2 class="anchored" data-anchor-id="variable-1-rendimiento-de-granos-por-hectarea"><strong>Variable 1 Rendimiento de granos por hectarea</strong></h2>
 <section id="modelo-estadisticos-rendimiento-de-granos-por-hectarea" class="level3">
-<h3 class="anchored" data-anchor-id="modelo-estadisticos-rendimiento-de-granos-por-hectarea">Modelo estadisticos rendimiento de granos por hectarea</h3>
+<h3 class="anchored" data-anchor-id="modelo-estadisticos-rendimiento-de-granos-por-hectarea"><strong>Modelo estadisticos rendimiento de granos por hectarea</strong></h3>
 <p><span class="math display">\[ Rend_g_ha = \mu + bloque + porcinaza + densidad + porcinaza*densidad + e\]</span> ### Análisis de varianza Anova rendimiento de granos por hectarea</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>modelo_rend <span class="ot">&lt;-</span> <span class="fu">aov</span>(rend_g_ha <span class="sc">~</span> bloque <span class="sc">+</span> porcinaza <span class="sc">*</span> densidad, <span class="at">data =</span> fb)</span>
@@ -357,7 +345,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <p>El análisis mostró que los factores porcinaza y densidad tuvieron un efecto altamente significativo sobre el rendimiento del cultivo (p &lt; 0.001). Asimismo, la interacción porcinaza × densidad fue significativa, indicando que la respuesta del rendimiento a la porcinaza depende del nivel de densidad empleado. En cambio, el factor bloque no presentó diferencias significativas</p>
 </section>
 <section id="comparación-de-medias-rendimiento-de-granos-por-hectarea" class="level3">
-<h3 class="anchored" data-anchor-id="comparación-de-medias-rendimiento-de-granos-por-hectarea">Comparación de medias rendimiento de granos por hectarea</h3>
+<h3 class="anchored" data-anchor-id="comparación-de-medias-rendimiento-de-granos-por-hectarea"><strong>Comparación de medias rendimiento de granos por hectarea</strong></h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>tukey <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(modelo_rend, <span class="sc">~</span> porcinaza<span class="sc">*</span>densidad) <span class="sc">%&gt;%</span> </span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cld</span>(<span class="at">adjust =</span> <span class="st">"tukey"</span>, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -389,7 +377,7 @@ NOTE: If two or more means share the same grouping symbol,
 </div>
 </section>
 <section id="gráficos-de-rendimiento-de-granos-por-hectarea" class="level3">
-<h3 class="anchored" data-anchor-id="gráficos-de-rendimiento-de-granos-por-hectarea">Gráficos de rendimiento de granos por hectarea</h3>
+<h3 class="anchored" data-anchor-id="gráficos-de-rendimiento-de-granos-por-hectarea"><strong>Gráficos de rendimiento de granos por hectarea</strong></h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>emmeans_rend <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(modelo_rend, <span class="sc">~</span> porcinaza <span class="sc">|</span> densidad)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>cld_rend <span class="ot">&lt;-</span> <span class="fu">cld</span>(emmeans_rend, <span class="at">adjust =</span> <span class="st">"tukey"</span>, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -416,14 +404,16 @@ because "tukey" is only appropriate for one set of pairwise comparisons</code></
 </div>
 </div>
 <p>Gráfico 01: El gráfico evidencia que el rendimiento de grano aumentó conforme se incrementó el nivel de porcinaza aplicado, tanto en la densidad de 0.8 × 0.4 m como en 0.8 × 0.5 m. Las letras sobre las barras muestran diferencias estadísticas entre los tratamientos.</p>
-<p>##VARIABLE 2 1 Altura de planta a los 30 días</p>
 </section>
+</section>
+<section id="variable-2.1-altura-de-planta-a-los-30-días" class="level2">
+<h2 class="anchored" data-anchor-id="variable-2.1-altura-de-planta-a-los-30-días"><strong>Variable 2.1 Altura de planta a los 30 días</strong></h2>
 <section id="modelo-estadisticos-altura-de-planta-a-los-30-días" class="level3">
-<h3 class="anchored" data-anchor-id="modelo-estadisticos-altura-de-planta-a-los-30-días">Modelo estadisticos altura de planta a los 30 días</h3>
+<h3 class="anchored" data-anchor-id="modelo-estadisticos-altura-de-planta-a-los-30-días"><strong>Modelo estadisticos altura de planta a los 30 días</strong></h3>
 <p><span class="math display">\[ Altup30d = \mu + bloque + porcinaza + densidad + porcinaza*densidad + e\]</span></p>
 </section>
 <section id="análisis-de-varianza-anova-altura-de-planta-a-los-30-días" class="level3">
-<h3 class="anchored" data-anchor-id="análisis-de-varianza-anova-altura-de-planta-a-los-30-días">Análisis de varianza Anova altura de planta a los 30 días</h3>
+<h3 class="anchored" data-anchor-id="análisis-de-varianza-anova-altura-de-planta-a-los-30-días"><strong>Análisis de varianza Anova altura de planta a los 30 días</strong></h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>md_altu30d <span class="ot">&lt;-</span> <span class="fu">lmer</span>(altu30d <span class="sc">~</span> densidad <span class="sc">*</span> porcinaza <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> bloque), <span class="at">data =</span> fb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -443,7 +433,7 @@ densidad:porcinaza 0.1075  3     0.9909</code></pre>
 <p>Ningún factor ni combinación de factores tuvo un efecto notable sobre la altura a los 30 días en tu experimento.</p>
 </section>
 <section id="comparación-de-medias-porcinaza-y-rendimiento-a-los-30-días" class="level3">
-<h3 class="anchored" data-anchor-id="comparación-de-medias-porcinaza-y-rendimiento-a-los-30-días">Comparación de medias porcinaza y rendimiento a los 30 días</h3>
+<h3 class="anchored" data-anchor-id="comparación-de-medias-porcinaza-y-rendimiento-a-los-30-días"><strong>Comparación de medias porcinaza y rendimiento a los 30 días</strong></h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>tukey <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(md_altu30d, <span class="sc">~</span> porcinaza<span class="sc">*</span>densidad) <span class="sc">%&gt;%</span> </span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cld</span>(<span class="at">adjust =</span> <span class="st">"tukey"</span>, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -475,7 +465,7 @@ NOTE: If two or more means share the same grouping symbol,
 </div>
 </section>
 <section id="gráficos-altura-de-planta-los-30-días" class="level3">
-<h3 class="anchored" data-anchor-id="gráficos-altura-de-planta-los-30-días">Gráficos altura de planta los 30 días</h3>
+<h3 class="anchored" data-anchor-id="gráficos-altura-de-planta-los-30-días"><strong>Gráficos altura de planta los 30 días</strong></h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>emmeans_altu30d <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(md_altu30d, <span class="sc">~</span> porcinaza <span class="sc">|</span> densidad)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>cld_altu30d <span class="ot">&lt;-</span> <span class="fu">cld</span>(emmeans_altu30d, <span class="at">adjust =</span> <span class="st">"tukey"</span>, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -502,11 +492,13 @@ because "tukey" is only appropriate for one set of pairwise comparisons</code></
 </div>
 </div>
 <p>Gráfico 02 : Ningún factor ni combinación de factores tuvo un efecto notable sobre la altura a los 30 días en&nbsp;tu&nbsp;experimento.</p>
-<p>##VARIABLE 2 2 Altura de planta a los 180 días (alt180d)</p>
 </section>
+</section>
+<section id="variable-2.2-altura-de-planta-a-los-180-días-alt180d" class="level2">
+<h2 class="anchored" data-anchor-id="variable-2.2-altura-de-planta-a-los-180-días-alt180d"><strong>Variable 2.2 Altura de planta a los 180 días (alt180d)</strong></h2>
 <section id="modelo-estadisticos" class="level3">
-<h3 class="anchored" data-anchor-id="modelo-estadisticos">Modelo estadisticos</h3>
-<p><span class="math display">\[ Altup180d = \mu + bloque + porcinaza + densidad + porcinaza*densidad + e\]</span> ### Análisis de varianza Anova altura de planta a los 180 días</p>
+<h3 class="anchored" data-anchor-id="modelo-estadisticos"><strong>Modelo estadisticos</strong></h3>
+<p><span class="math display">\[ Altup180d = \mu + bloque + porcinaza + densidad + porcinaza*densidad + e\]</span> ### <strong>Análisis de varianza Anova altura de planta a los 180 días</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>md_alt180d <span class="ot">&lt;-</span> <span class="fu">lmer</span>(alt180d <span class="sc">~</span> densidad <span class="sc">*</span> porcinaza <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> bloque), <span class="at">data =</span> fb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -528,7 +520,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <p>La altura de planta a los 180 días estuvo determinada principalmente por el nivel de porcinaza aplicada, mientras que la densidad de siembra y la interacción entre factores no afectaron significativamente esta variable.</p>
 </section>
 <section id="comparación-de-medias-de-altura-de-planta-los-180-días" class="level3">
-<h3 class="anchored" data-anchor-id="comparación-de-medias-de-altura-de-planta-los-180-días">Comparación de medias de altura de planta los 180 días</h3>
+<h3 class="anchored" data-anchor-id="comparación-de-medias-de-altura-de-planta-los-180-días"><strong>Comparación de medias de altura de planta los 180 días</strong></h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>tukey <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(md_alt180d, <span class="sc">~</span> porcinaza<span class="sc">*</span>densidad) <span class="sc">%&gt;%</span> </span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cld</span>(<span class="at">adjust =</span> <span class="st">"tukey"</span>, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -560,7 +552,7 @@ NOTE: If two or more means share the same grouping symbol,
 </div>
 </section>
 <section id="gráficos-altura-de-planta-los-180-días" class="level3">
-<h3 class="anchored" data-anchor-id="gráficos-altura-de-planta-los-180-días">Gráficos altura de planta los 180 días</h3>
+<h3 class="anchored" data-anchor-id="gráficos-altura-de-planta-los-180-días"><strong>Gráficos altura de planta los 180 días</strong></h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>emmeans_alt180d <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(md_alt180d, <span class="sc">~</span> porcinaza <span class="sc">|</span> densidad)</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>cld_alt180d <span class="ot">&lt;-</span> <span class="fu">cld</span>(emmeans_alt180d, <span class="at">adjust =</span> <span class="st">"tukey"</span>, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -590,13 +582,13 @@ because "tukey" is only appropriate for one set of pairwise comparisons</code></
 </section>
 </section>
 <section id="variable-3-número-de-mazorcas-por-planta" class="level2">
-<h2 class="anchored" data-anchor-id="variable-3-número-de-mazorcas-por-planta">VARIABLE 3 número de mazorcas por planta</h2>
+<h2 class="anchored" data-anchor-id="variable-3-número-de-mazorcas-por-planta"><strong>Variable 3 número de mazorcas por planta</strong></h2>
 <section id="modelo-estadisticos-número-de-mazorcas-por-planta" class="level3">
-<h3 class="anchored" data-anchor-id="modelo-estadisticos-número-de-mazorcas-por-planta">Modelo estadisticos número de mazorcas por planta</h3>
+<h3 class="anchored" data-anchor-id="modelo-estadisticos-número-de-mazorcas-por-planta"><strong>Modelo estadisticos número de mazorcas por planta</strong></h3>
 <p><span class="math display">\[ Mazp = \mu + bloque + porcinaza + densidad + porcinaza*densidad + e\]</span></p>
 </section>
 <section id="análisis-de-varianza-anova-número-de-mazorcas-por-planta" class="level3">
-<h3 class="anchored" data-anchor-id="análisis-de-varianza-anova-número-de-mazorcas-por-planta">Análisis de varianza Anova número de mazorcas por planta</h3>
+<h3 class="anchored" data-anchor-id="análisis-de-varianza-anova-número-de-mazorcas-por-planta"><strong>Análisis de varianza Anova número de mazorcas por planta</strong></h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>modelo_maz_p <span class="ot">&lt;-</span> <span class="fu">lmer</span>(maz_p <span class="sc">~</span> densidad <span class="sc">*</span> porcinaza <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> bloque), <span class="at">data =</span> fb)</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -616,7 +608,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <p>Tanto la densidad de siembra como los niveles de porcinaza tuvieron un efecto altamente significativo en el número de mazorcas por planta. Además, la interacción significativa entre ambos factores indica que las combinaciones específicas de densidad y fertilización orgánica influyen de manera conjunta en la producción de mazorcas.</p>
 </section>
 <section id="comparación-de-medias-mazorcas-por-planta" class="level3">
-<h3 class="anchored" data-anchor-id="comparación-de-medias-mazorcas-por-planta">Comparación de medias mazorcas por planta</h3>
+<h3 class="anchored" data-anchor-id="comparación-de-medias-mazorcas-por-planta"><strong>Comparación de medias mazorcas por planta</strong></h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>tukey <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(modelo_maz_p, <span class="sc">~</span> porcinaza<span class="sc">*</span>densidad) <span class="sc">%&gt;%</span> </span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cld</span>(<span class="at">adjust =</span> <span class="st">"tukey"</span>, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -648,7 +640,7 @@ NOTE: If two or more means share the same grouping symbol,
 </div>
 </section>
 <section id="gráfico-de-número-de-mazorcas-por-planta" class="level3">
-<h3 class="anchored" data-anchor-id="gráfico-de-número-de-mazorcas-por-planta">Gráfico de número de mazorcas por planta</h3>
+<h3 class="anchored" data-anchor-id="gráfico-de-número-de-mazorcas-por-planta"><strong>Gráfico de número de mazorcas por planta</strong></h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>emmeans_var3 <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(modelo_maz_p, <span class="sc">~</span> porcinaza <span class="sc">|</span> densidad)</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>cld_var3 <span class="ot">&lt;-</span> <span class="fu">cld</span>(emmeans_var3, <span class="at">adjust =</span> <span class="st">"tukey"</span>, <span class="at">Letters =</span> letters)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -678,8 +670,8 @@ because "tukey" is only appropriate for one set of pairwise comparisons</code></
 </section>
 </section>
 </section>
-<section id="análisis-multivariado-pca" class="level1">
-<h1>ANÁLISIS MULTIVARIADO PCA</h1>
+<section id="analisis-multivariado-pca" class="level1">
+<h1><strong>Analisis multivariado PCA </strong></h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">PCA</span>(fb[, <span class="dv">5</span><span class="sc">:</span><span class="dv">13</span>], <span class="at">quali.sup =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">graph =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -765,7 +757,7 @@ The analysis was performed on 32 individuals, described by 9 variables
 </div>
 <p>Gráficos 05 : PCA mostró una alta asociación entre las variables de rendimiento (maz_p, maz_ha, diam_m, peso_g y long_m). Los tratamientos con 480 g/planta, especialmente con densidad 0.8×0.5 m, se ubicaron en la zona de mayor productividad, mientras que los sin porcinaza presentaron menor&nbsp;desempeño.</p>
 <section id="gráfico-de-correlación" class="level2">
-<h2 class="anchored" data-anchor-id="gráfico-de-correlación">Gráfico de correlación</h2>
+<h2 class="anchored" data-anchor-id="gráfico-de-correlación"><strong>Gráfico de correlación</strong></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -789,10 +781,10 @@ The analysis was performed on 32 individuals, described by 9 variables
 <p>Gráfico 06 : El gráfico muestra la relación entre las variables agronómicas del experimento. Se observa una fuerte correlación positiva (en tonos rojos) entre el rendimiento (rend_g_ha) y variables como mazorcas por hectárea (maz_ha), peso, diámetro y longitud de mazorca, indicando que estos componentes determinan directamente la productividad.</p>
 </section>
 </section>
-<section id="referencia-bibliográfica" class="level1">
-<h1>REFERENCIA BIBLIOGRÁFICA</h1>
-<p>Olasco-Bernardo, Y., Gutiérrez-Solórzano, M. B., Palacín-Guerra, P. S., &amp; Cornejo-Maldonado, A. S. (2022). Enmiendas orgánicas y su efecto en los componentes de rendimiento de maíz morado (Zea mays L.) en Huánuco, Perú. Revista Investigación Agraria, 4 (1), 38-45. https://doi.org/10.47840/ReInA.4.1.1314</p>
-<p>Zagaceta Llanca (2023). Niveles de porcinaza y densidades de siembra sobre el rendimiento de maíz morado (Zea mays L.) var. INIA-601 en Lámud.</p>
+<section id="referencias-bibliográficas" class="level1">
+<h1><strong>Referencias bibliográficas</strong></h1>
+<p>Olasco-Bernardo, Y., Gutiérrez-Solórzano, M. B., Palacín-Guerra, P. S., &amp; Cornejo-Maldonado, A. S. (2022). Enmiendas orgánicas y su efecto en los componentes de rendimiento de maíz morado (Zea mays L.) en Huánuco, Perú. Revista Investigación Agraria, 4 (1), 38-45. <a href="https://revistas.unheval.edu.pe/index.php/reina/index" class="uri">https://revistas.unheval.edu.pe/index.php/reina/index</a></p>
+<p>Zagaceta Llanca (2023). Niveles de porcinaza y densidades de siembra sobre el rendimiento de maíz morado (Zea mays L.) var. INIA-601 en Lámud. <a href="https://repositorio.untrm.edu.pe/bitstream/handle/20.500.14077/4239/Miguel%20Angel%20Zagaceta%20Llanca%20-%20FICA.pdf?sequence=1&amp;isAllowed=y" class="uri">https://repositorio.untrm.edu.pe/bitstream/handle/20.500.14077/4239/Miguel%20Angel%20Zagaceta%20Llanca%20-%20FICA.pdf?sequence=1&amp;isAllowed=y</a></p>
 <p>`</p>
 </section>
 
