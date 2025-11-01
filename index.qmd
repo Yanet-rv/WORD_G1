@@ -1,22 +1,11 @@
 ---
-title: "EFECTO DE LA FERTILIZACIÓN CON GALLINAZA Y DENSIDAD DE SIEMBRA EN EL CULTIVO DE QUINUA (Chenopodium quinoa) VARIEDAD SALCEDO"
-author: "Tomado de: Bach. Miguel Angel Zagaceta Llanca"
+title: "Niveles de porcinaza y densidades de simbra de maiz"
+author: "Tomado de Miguel Angel Zagaceta Llanca 2023"
 format:
   html:
     toc: true
-    toc-expand: true
-    toc-depth: 4
     toc-location: left
     number-sections: true
-    self-contained: true
-    code-fold: true
-    output-file: "ESM"
-editor_options: 
-  chunk_output_type: console
-execute:
-  warning: false
-  message: false
-  echo: true
 ---
 
 # **Integrantes G1**
