@@ -1,5 +1,5 @@
 ---
-title: "Niveles de porcinaza y densidades de simbra de maiz"
+title: "Niveles de porcinaza y densidad de siembra sobre el rendimiento de maiz"
 author: "Tomado de Miguel Angel Zagaceta Llanca 2023"
 format:
   html:
